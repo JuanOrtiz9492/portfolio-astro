@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "concurrently \"astro dev\" \"tailwindcss -i ./src/input.css -o ./dist/output.css --watch\"",
+    "start": "astro dev",
+    "preBuild": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^4.0.0",
+    "@astrojs/vue": "^2.2.1",
+    "astro": "^2.10.15",
+    "vue": "^3.3.6"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "tailwindcss": "^3.3.3"
+  }
+}

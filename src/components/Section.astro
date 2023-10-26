@@ -1,0 +1,8 @@
+---
+const { title } = Astro.props
+---
+
+<section>
+  {title !== '' && <h2 class="text-teal-50 uppercase text-xl my-4">{title}</h2>}
+  <slot></slot>
+</section>
