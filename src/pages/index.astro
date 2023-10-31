@@ -2,12 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
 import ExperienceSection from '../components/ExperienceSection.vue';
+import UserSection from '../components/UserSection.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<div class="px-20">
+		<UserSection />
 		<Section title="Work Experience">
-			<div class="flex flex-row flex-wrap">
+			<div class="flex flex-row flex-wrap experience-section">
 				<ExperienceSection client:visible/>
 	</Section>
 	</div>
@@ -70,5 +72,10 @@ import ExperienceSection from '../components/ExperienceSection.vue';
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
+	}
+	@media (max-width: 768px){
+		.experience-section	{
+			justify-content: center;
+		}
 	}
 </style>

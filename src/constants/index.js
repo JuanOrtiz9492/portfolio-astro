@@ -52,5 +52,48 @@ export default {
       techStack: 'Vue js, Angular js, Angular 14',
       id:5
     }
-  ]
+  ],
+  skills : [
+    {
+      id: 1,
+      skillName: 'React js',
+      level: 5
+    },
+    {
+      id: 2,
+      skillName: 'Javascript',
+      level: 5
+    },
+    {
+      id: 3,
+      skillName: 'jest',
+      level: 5
+    },
+    {
+      id: 4,
+      skillName: 'node js',
+      level: 3
+    },
+    {
+      id: 5,
+      skillName: 'express js',
+      level: 3
+    },
+    {
+      id: 6,
+      skillName: 'postgre sql',
+      level: 2
+    },
+    {
+      id: 7,
+      skillName: 'vue js',
+      level: 2
+    },
+    {
+      id: 8,
+      skillName: 'docker',
+      level: 2
+    },
+  ],
+  social: [],
 }

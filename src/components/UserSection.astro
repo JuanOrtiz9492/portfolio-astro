@@ -1,0 +1,51 @@
+---
+import Section from "./Section.astro";
+import Skills from "./Skills.astro";
+import constants from '../constants/index';
+const {skills} = constants
+---
+
+<Section>
+  <div class="flex flex-row user-section-container">
+    <img class="w-64 mr-10 full-image" src="./retrato3small.jpg" alt="Juan ortiz photo">
+    <img class="w-36 h-36 rounded-full rounded-image" src="./portrait-small.jpg">
+    <section class="text-teal-50 h-80">
+      <p>SKILLS:</p>
+      <div class="flex flex-col flex-wrap gap-x-4 h-72">
+        {skills.map(({skillName, level, id})=>(
+        <Skills skillName={skillName} level={level} key={id}/>
+      ))}
+      </div>
+    </section>
+  </div>
+</Section>
+
+<style>
+  @media (max-width: 426px) {
+    div.user-section-container{
+      flex-direction: column;
+      align-items: center;
+    }
+    div.user-section-container .h-72{
+      height: auto;
+    }
+    div.user-section-container .h-80{
+      height: auto;
+    }
+    .full-image {
+      display: none;
+    }
+    .rounded-image {
+      display: block;
+    }
+  }
+  @media (min-width: 426px) {
+    .full-image {
+      display: block;
+    }
+    .rounded-image {
+      display: none;
+    }
+  }
+</style>
+

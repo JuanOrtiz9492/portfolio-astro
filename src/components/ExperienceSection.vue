@@ -8,7 +8,7 @@ import constants from '../constants';
 export default {
     data() {
         return {
-            workExperience: constants.workExperience.map(item => ({ ...item, isVisible: false }))
+            workExperience: constants.workExperience.map(item => ({ ...item, isVisible: false })).reverse()
         };
     },
     methods: {

@@ -1,0 +1,24 @@
+---
+interface Props{
+  skillName: string,
+  level: 0 | 1 | 2 | 3 | 4 | 5,
+}
+const BLOCKS = new Array(5).fill(0);
+const {level, skillName} = Astro.props
+---
+
+<div>
+  <p class="mb-2">{skillName}</p>
+  <div class="flex flex-row">
+    {BLOCKS.map((_, idx) => (
+      <div class={`w-7 h-3 ml-2 first:ml-0 ${idx < level ? 'active bg-lime-400': 'bg-slate-500'}`}></div>
+    ))}
+  </div>
+  
+</div>
+
+<style>
+  .active {
+    box-shadow: 0 0 10px 2px rgba(32, 235, 6, 0.5);
+  }
+</style>
