@@ -1,10 +1,15 @@
+---
+import Github from "../icons/github.astro";
+import Linkedin from "../icons/linkedin.astro";
+import Mail from "../icons/mail.astro";
+---
 <header class="h-20 flex justify-around items-center text-teal-200 uppercase bg-teal-900">
   <h1 class="text-xl">Juan Ortiz Dev</h1>
   <nav>
-    <!-- <ul class="flex">
-      <li><button class="mx-4 uppercase py-2 px-4 border-2 border-teal-700 hover:bg-teal-700 hover:text-teal-50">about me</button></li>
-      <li><button class="mx-4 uppercase py-2 px-4 border-2 border-teal-700 hover:bg-teal-700 hover:text-teal-50">projects</button></li>
-      <li><button class="mx-4 uppercase py-2 px-4 border-2 border-teal-700 hover:bg-teal-700 hover:text-teal-50">contact me</button></li>
-    </ul> -->
+    <ul class="flex">
+      <li class="flex items-center"><a href="https://github.com/JuanOrtiz9492" target="_blank" class="ml-4"><Github class="fill-teal-100" width="40px" height="40px"/></a></li>
+      <li class="flex items-center"><a href="https://co.linkedin.com/in/ingortizh" target="_blank" class="ml-4"><Linkedin class="fill-teal-100" width="40px" height="40px"/></a></li>
+      <li class="flex items-center"><button class="ml-4"><Mail class="stroke-teal-100 fill-teal-100 stroke-0" width="40px" height="40px"/></button></li>
+    </ul>
   </nav>
 </header>

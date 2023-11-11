@@ -56,7 +56,7 @@ export default {
   skills : [
     {
       id: 1,
-      skillName: 'React js',
+      skillName: 'React Js',
       level: 5
     },
     {
@@ -66,32 +66,32 @@ export default {
     },
     {
       id: 3,
-      skillName: 'jest',
+      skillName: 'Jest',
       level: 5
     },
     {
       id: 4,
-      skillName: 'node js',
+      skillName: 'Node Js',
       level: 3
     },
     {
       id: 5,
-      skillName: 'express js',
+      skillName: 'Express Js',
       level: 3
     },
     {
       id: 6,
-      skillName: 'postgre sql',
+      skillName: 'Postgre SQL',
       level: 2
     },
     {
       id: 7,
-      skillName: 'vue js',
+      skillName: 'Vue Js',
       level: 2
     },
     {
       id: 8,
-      skillName: 'docker',
+      skillName: 'Docker',
       level: 2
     },
   ],

@@ -7,7 +7,7 @@ const BLOCKS = new Array(5).fill(0);
 const {level, skillName} = Astro.props
 ---
 
-<div>
+<div class="mb-2">
   <p class="mb-2">{skillName}</p>
   <div class="flex flex-row">
     {BLOCKS.map((_, idx) => (
