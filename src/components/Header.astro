@@ -3,13 +3,20 @@ import Github from "../icons/github.astro";
 import Linkedin from "../icons/linkedin.astro";
 import Mail from "../icons/mail.astro";
 ---
+<script>
+  import {isModalOpen} from '../store/store';
+  function openModal () {
+    isModalOpen.set(true);
+  }
+  document.getElementById('send-mail').addEventListener('click', openModal)
+</script>
 <header class="h-20 flex justify-around items-center text-teal-200 uppercase bg-teal-900">
   <h1 class="text-xl">Juan Ortiz Dev</h1>
   <nav>
     <ul class="flex">
       <li class="flex items-center"><a href="https://github.com/JuanOrtiz9492" target="_blank" class="ml-4"><Github class="fill-teal-100" width="40px" height="40px"/></a></li>
       <li class="flex items-center"><a href="https://co.linkedin.com/in/ingortizh" target="_blank" class="ml-4"><Linkedin class="fill-teal-100" width="40px" height="40px"/></a></li>
-      <li class="flex items-center"><button class="ml-4"><Mail class="stroke-teal-100 fill-teal-100 stroke-0" width="40px" height="40px"/></button></li>
+      <li class="flex items-center"><button id="send-mail" class="ml-4"><Mail class="stroke-teal-100 fill-teal-100 stroke-0" width="40px" height="40px"/></button></li>
     </ul>
   </nav>
 </header>
