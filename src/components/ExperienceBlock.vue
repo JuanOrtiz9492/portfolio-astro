@@ -3,7 +3,9 @@
     <h3>{{workItem.companyName}}</h3>
     <h4 class="text-sm">{{workItem.period}}</h4>
     <div class="flex justify-center my-2">
-      <button class="my-2" @click="toggleDescription" :class="{more:!workItem.isVisible, less:workItem.isVisible}"></button>
+      <button :aria-label="`show ${workItem.isVisible ? 'less' : 'more'} button`" class="my-2" @click="toggleDescription" :class="{more:!workItem.isVisible, less:workItem.isVisible}">
+        <div></div>
+      </button>
     </div>
     <div v-if="workItem.isVisible" id="description-container">
       <ul class="ml-5 mb-4">
@@ -45,24 +47,24 @@ export default {
 </script>
 
 <style>
-  button.more {
+  button.more div {
     border-right: 3px solid white;
     border-bottom: 3px solid white;
     width: 1em;
     height: 1em;
     transform: rotate(45deg);
   }
-  button.less {
+  button.less div {
     border-right: 3px solid white;
     border-bottom: 3px solid white;
     width: 1em;
     height: 1em;
     transform: rotate(-135deg);
   }
-  button.more:hover {
+  button.more:hover div {
     animation: bounce 0.8s infinite ease-in-out;
   }
-  button.less:hover {
+  button.less:hover div {
     animation: bounce-back 0.8s infinite ease-in-out;
   }
 

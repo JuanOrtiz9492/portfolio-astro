@@ -6,7 +6,23 @@
   function closeModal () {
     isModalOpen.set(false);
   }
-  document.getElementById('cancel-button').addEventListener('click', closeModal)
+  function sendMail (e) {
+    e.preventDefault()
+    const sender = (document.getElementById('from-field') as HTMLInputElement).value
+    const subject = (document.getElementById('subject-field') as HTMLInputElement).value
+    const body = (document.getElementById('body-field') as HTMLInputElement).value
+    //fetch(`${window.location.origin}/send-mail`, {
+    fetch(`http://localhost:4000/send-mail`, {
+      method:'POST',
+      headers: {
+            'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({sender, subject, body})
+    }).then(res =>{
+    }).catch(e => console.error(e.message)).finally(()=>{
+      isModalOpen.set(false)
+    })
+  }
   isModalOpen.subscribe((isOpen)=>{
     if(isOpen){
       document.getElementById('modal').style.display = 'block';
@@ -14,8 +30,10 @@
       document.getElementById('modal').style.display = 'none';
     }
   })
+  document.getElementById('cancel-button').addEventListener('click', closeModal)
+  document.getElementById('send-button').addEventListener('click', sendMail)
 </script>
-<div id="modal" class="flex items-center justify-center w-screen h-screen absolute z-10 left-0 top-0">
+<div id="modal" class="w-screen h-screen absolute z-10 left-0 top-0">
   <div class="w-screen h-screen bg-slate-500 opacity-70"></div>
   <div class="w-4/5 lg:w-5/12 min:h-2/5 bg-gray-800 absolute left-2/4 top-2/4 z-20 -translate-x-2/4 -translate-y-2/4 rounded-lg">
     <form class="h-full flex flex-col justify-between p-8">
@@ -27,9 +45,8 @@
       <textarea class="mb-4" id="body-field" rows="4" cols="33"></textarea>
       <div class="flex flex-row self-end justify-self-end">
         <button class="mr-6 border-2 rounded-md border-white px-6 py-2 bg-gray-800 text-white text-lg" id="cancel-button" onclick="(e)=> e.preventDefault()">Cancel</button>
-        <button class="border-2 rounded-md border-teal-400 px-6 py-2 bg-teal-400 text-teal-950 text-lg">Send</button>
+        <button class="border-2 rounded-md border-teal-400 px-6 py-2 bg-teal-400 text-teal-950 text-lg" id="send-button">Send</button>
       </div>
-      
     </form>
   </div>
 </div>

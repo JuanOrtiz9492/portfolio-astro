@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently \"astro dev\" \"tailwindcss -i ./src/input.css -o ./dist/output.css --watch\"",
     "start": "astro dev",
-    "preBuild": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "prebuild": "tailwindcss -i ./src/input.css -o ./dist/output.css",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
